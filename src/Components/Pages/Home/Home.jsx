@@ -7,24 +7,31 @@ import {
   Group,
   SimpleGrid,
   Stack,
+  Overlay,
 } from "@mantine/core";
+import { useElementSize } from "@mantine/hooks";
 
 const useStyles = createStyles((t) => ({
   container: {
     color: "white",
+    width: "80%",
+    margin: "auto",
   },
 }));
 
 export default function Home() {
   const { classes } = useStyles();
+  const { ref, height } = useElementSize();
+
   return (
     <Container fluid p={0} mt={"130px"} className={classes.container}>
       <Title sx={{ fontSize: "96px" }}>Hi, Im Anas Deyra</Title>
-      <Text size="xl">
+      <Text ml={0} sx={{ fontSize: "28px", maxWidth: "850px" }}>
         A full stack web developer & UI/UX designer that will make your business
         boom.
       </Text>
-      <Group mt={"3rem"} spacing={"xl"}>
+
+      <Group mt={"5rem"} spacing={"xl"}>
         <Button color={"red"} radius={0} sx={{ fontWeight: "500" }} size="xl">
           Contact
         </Button>
@@ -38,24 +45,39 @@ export default function Home() {
           See work
         </Button>
       </Group>
-      <Container
-        mt={"3rem"}
-        p={"xl"}
-        size={"fluid"}
-        sx={{
-          background: "rgba(77, 171, 247, 0.3)",
-        }}
-      >
-        <Title order={1}>Why choosing me?</Title>
-        <SimpleGrid mt={"xl"} spacing={"lg"} cols={3}>
-          {FEATURES.map(({ label, text }, i) => (
-            <Stack key={i} spacing={"xs"}>
-              <Title order={2}>{label}</Title>
-              <Text>{text}</Text>
-            </Stack>
-          ))}
-        </SimpleGrid>
-      </Container>
+      <div ref={ref}>
+        <Overlay
+          sx={{
+            height: height,
+            width: "100vw",
+            top: "unset",
+            bottom: "unset",
+            left: "unset",
+            background: "rgba(77, 171, 247, 0.20);",
+            backdropFilter: "blur(20px)",
+          }}
+          zIndex={-1}
+          color="cyan"
+        />
+        <Container fluid mt={"8rem"} mb={"5rem"} py={"xl"} px="0">
+          <Title order={1}>Why choosing me?</Title>
+          <SimpleGrid
+            sx={{
+              zIndex: "2",
+            }}
+            mt={"xl"}
+            spacing={"lg"}
+            cols={3}
+          >
+            {FEATURES.map(({ label, text }, i) => (
+              <Stack key={i} spacing={"xs"}>
+                <Title order={2}>{label}</Title>
+                <Text>{text}</Text>
+              </Stack>
+            ))}
+          </SimpleGrid>
+        </Container>
+      </div>
     </Container>
   );
 }

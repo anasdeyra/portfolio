@@ -7,7 +7,7 @@ const useStyles = createStyles((t) => ({
     fontWeight: "300",
     color: "black",
     fontSize: t.fontSizes.lg,
-    ":hover": { color: t.colors.grape[5] },
+    ":hover": { color: t.colors.red[5] },
   },
   wrapper: {},
 }));
@@ -26,7 +26,9 @@ export default function NavLinks() {
     <Group spacing={"50px"}>
       {navItems.map(({ label, link }, i) => (
         <Text
-          sx={pathname === link && { color: "#CC5DE8", fontWeight: "500" }}
+          sx={(t) =>
+            pathname === link && { color: t.colors.red[5], fontWeight: "500" }
+          }
           className={classes.item}
           key={i}
           to={link}

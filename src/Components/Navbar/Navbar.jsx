@@ -4,6 +4,7 @@ import Socials from "./Socials";
 
 const useStyles = createStyles((t) => ({
   container: {
+    width: "80%",
     height: "4rem",
     background: "transparent",
     display: "flex",
