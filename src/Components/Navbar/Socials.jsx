@@ -4,8 +4,7 @@ import { FaFacebook, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 const useStyles = createStyles((t) => ({
   item: {
     fontWeight: "300",
-    color: "black",
-    fontSize: t.fontSizes.xl,
+    fontSize: t.fontSizes.lg,
     ":hover": { color: t.colors.cyan[6] },
   },
   wrapper: {},
@@ -18,15 +17,24 @@ const socials = [
   { link: "https://facebook.com", Icon: FaInstagram },
 ];
 
-export default function Socials() {
+export default function Socials({
+  spacing = "xl",
+  size = "sm",
+  color = "black",
+  hover,
+}) {
   const { classes } = useStyles();
 
   return (
-    <Group spacing={"xl"}>
+    <Group spacing={spacing}>
       {socials.map(({ Icon, link }, i) => (
         <ThemeIcon
-          size={"sm"}
-          sx={{ background: "transparent" }}
+          size={size}
+          sx={(t) => ({
+            background: "transparent",
+            color,
+            ":hover": { color: t.colors.red[5] },
+          })}
           className={classes.item}
           key={i}
           target="_blank"

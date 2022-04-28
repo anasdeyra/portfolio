@@ -59,7 +59,7 @@ export default function Home() {
           zIndex={-1}
           color="cyan"
         />
-        <Container fluid mt={"8rem"} mb={"5rem"} py={"xl"} px="0">
+        <Container fluid my={"8rem"} py={"xl"} px="0">
           <Title order={1}>Why choosing me?</Title>
           <SimpleGrid
             sx={{
