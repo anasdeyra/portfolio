@@ -7,7 +7,7 @@ import {
   Group,
 } from "@mantine/core";
 import Features from "./Features";
-import { useElementSize } from "@mantine/hooks";
+import { useElementSize, useViewportSize } from "@mantine/hooks";
 
 const useStyles = createStyles((t) => ({
   container: {
@@ -38,6 +38,7 @@ const useStyles = createStyles((t) => ({
 export default function Home() {
   const { classes } = useStyles();
   const { ref, width } = useElementSize();
+  const vw = useViewportSize().width;
 
   return (
     <Container fluid p={0} mt={"130px"} className={classes.container}>
@@ -50,14 +51,19 @@ export default function Home() {
       </Text>
 
       <Group mt={"5rem"} spacing={"xl"}>
-        <Button color={"red"} radius={0} sx={{ fontWeight: "500" }} size="lg">
+        <Button
+          color={"red"}
+          radius={0}
+          sx={{ fontWeight: "500" }}
+          size={vw < 786 ? "lg" : "xl"}
+        >
           Contact
         </Button>
         <Button
           radius={0}
           color="red"
           variant="white"
-          size="lg"
+          size={vw < 786 ? "lg" : "xl"}
           sx={{ fontWeight: "500" }}
         >
           See work
