@@ -1,5 +1,4 @@
-import { Footer as F, Group, Title } from "@mantine/core";
-import { MdPhone, MdAlternateEmail } from "react-icons/md";
+import { Footer as F, Title } from "@mantine/core";
 import Socials from "../Navbar/Socials";
 
 export default function Footer() {
@@ -14,11 +13,14 @@ export default function Footer() {
         justifyContent: "space-between",
         color: "white",
         fontWeight: "400",
+        [`@media (max-width: ${t.breakpoints.sm}px)`]: {
+          paddingBottom: t.spacing.xl * 1.5,
+        },
       })}
       py={"sm"}
     >
       <Title order={3}>Deyra</Title>
-      <Socials spacing="sm" size="xs" color="white" />
+      <Socials spacing="sm" size="xs" color="white" hover={"red"} />
     </F>
   );
 }

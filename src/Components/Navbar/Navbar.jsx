@@ -1,6 +1,7 @@
 import { Header, createStyles, Text } from "@mantine/core";
 import NavLinks from "./NavLinks";
 import Socials from "./Socials";
+import { BurgerNavLinks } from "./NavLinks";
 
 const useStyles = createStyles((t) => ({
   container: {
@@ -14,7 +15,6 @@ const useStyles = createStyles((t) => ({
     alignItems: "center",
     position: "relative",
   },
-  wrapper: {},
 }));
 
 export default function Navbar() {
@@ -26,6 +26,7 @@ export default function Navbar() {
         Deyra
       </Text>
       <NavLinks />
+      <BurgerNavLinks />
       <Socials />
     </Header>
   );

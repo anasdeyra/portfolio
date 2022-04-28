@@ -33,7 +33,7 @@ export default function Socials({
           sx={(t) => ({
             background: "transparent",
             color,
-            ":hover": { color: t.colors.red[5] },
+            ":hover": hover && { color: t.colors[hover][5] },
           })}
           className={classes.item}
           key={i}
