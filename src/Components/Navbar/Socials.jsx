@@ -10,13 +10,6 @@ const useStyles = createStyles((t) => ({
   wrapper: {},
 }));
 
-const socials = [
-  { link: "https://facebook.com", Icon: FaLinkedin },
-  { link: "https://facebook.com", Icon: FaGithub },
-  { link: "https://facebook.com", Icon: FaFacebook },
-  { link: "https://facebook.com", Icon: FaInstagram },
-];
-
 export default function Socials({
   spacing = "xl",
   size = "sm",
@@ -27,7 +20,7 @@ export default function Socials({
 
   return (
     <Group spacing={spacing}>
-      {socials.map(({ Icon, link }, i) => (
+      {SOCIALS.map(({ Icon, link }, i) => (
         <ThemeIcon
           size={size}
           sx={(t) => ({
@@ -47,3 +40,13 @@ export default function Socials({
     </Group>
   );
 }
+
+const SOCIALS = [
+  { link: "https://facebook.com", Icon: FaLinkedin },
+  { link: "https://github.com/anasdeyra", Icon: FaGithub },
+  {
+    link: "https://www.facebook.com/if.you.see.this.you.arre.gay/",
+    Icon: FaFacebook,
+  },
+  { link: "https://www.instagram.com/anas_deyra/", Icon: FaInstagram },
+];

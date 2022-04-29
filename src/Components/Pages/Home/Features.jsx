@@ -5,11 +5,20 @@ import {
   Title,
   Text,
   Stack,
+  createStyles,
 } from "@mantine/core";
 import { useElementSize } from "@mantine/hooks";
 
+const useStyles = createStyles((t) => ({
+  container: {
+    margin: "8rem 0 8rem 0",
+    [`@media (max-width: ${t.breakpoints.sm}px)`]: { margin: "5rem 0 5rem 0" },
+  },
+}));
+
 export default function Features() {
   const { ref, height } = useElementSize();
+  const { classes } = useStyles();
   return (
     <div ref={ref}>
       <Overlay
@@ -25,7 +34,7 @@ export default function Features() {
         zIndex={-1}
         color="cyan"
       />
-      <Container fluid my={"8rem"} py={"xl"} px="0">
+      <Container fluid className={classes.container} py={"xl"} px="0">
         <Title order={1}>Why choosing me?</Title>
         <SimpleGrid
           sx={{
