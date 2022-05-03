@@ -7,6 +7,7 @@
 body {
   margin: 0;
   position: relative;
+  overflow: overlay;
 }
 
 .bg {
@@ -16,4 +17,16 @@ body {
   min-height: 100vh;
   position: absolute;
   z-index: -1;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #038eff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
 }

@@ -8,6 +8,7 @@ import {
 } from "@mantine/core";
 import Features from "./Features";
 import { useElementSize, useViewportSize } from "@mantine/hooks";
+import ContactButton from "./ContactModal";
 
 const useStyles = createStyles((t) => ({
   container: {
@@ -55,27 +56,20 @@ export default function Home() {
       className={classes.container}
     >
       <Title ref={ref} className={classes.title}>
-        Hi, Im Anas Deyra
+        Hi, I'm Anas Deyra
       </Title>
       <Text sx={{ maxWidth: `${width}px` }} className={classes.subTitle} ml={0}>
         A full stack web developer & UI/UX designer that will make your business
-        boom.
+        go to the moon.
       </Text>
       <Group className={classes.cta} spacing={"xl"}>
+        <ContactButton size={vw < 786 ? "lg" : "xl"} />
         <Button
           color={"red"}
           radius={0}
           sx={{ fontWeight: "500" }}
           size={vw < 786 ? "lg" : "xl"}
-        >
-          Contact
-        </Button>
-        <Button
-          radius={0}
-          color="red"
           variant="white"
-          size={vw < 786 ? "lg" : "xl"}
-          sx={{ fontWeight: "500" }}
         >
           See work
         </Button>

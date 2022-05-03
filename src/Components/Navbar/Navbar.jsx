@@ -1,4 +1,4 @@
-import { Header, createStyles, Text } from "@mantine/core";
+import { Header, createStyles, Title } from "@mantine/core";
 import NavLinks from "./NavLinks";
 import Socials from "./Socials";
 import { BurgerNavLinks } from "./NavLinks";
@@ -15,6 +15,9 @@ const useStyles = createStyles((t) => ({
     alignItems: "center",
     position: "relative",
   },
+  logo: {
+    fontWeight: "900",
+  },
 }));
 
 export default function Navbar() {
@@ -22,9 +25,9 @@ export default function Navbar() {
 
   return (
     <Header className={classes.container}>
-      <Text size="xl" weight={"900"}>
+      <Title className={classes.logo} order={3}>
         Deyra
-      </Text>
+      </Title>
       <NavLinks />
       <BurgerNavLinks />
       <Socials />

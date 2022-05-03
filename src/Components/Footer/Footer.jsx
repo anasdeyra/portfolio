@@ -19,7 +19,7 @@ export default function Footer() {
       })}
       py={"sm"}
     >
-      <Title order={3}>Deyra</Title>
+      <Title order={4}>Deyra</Title>
       <Socials spacing="sm" size="xs" color="white" hover={"red"} />
     </F>
   );
