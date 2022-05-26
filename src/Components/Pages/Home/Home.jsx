@@ -5,6 +5,7 @@ import {
   createStyles,
   Container,
   Group,
+  Overlay,
 } from "@mantine/core";
 import Features from "./Features";
 import { useElementSize, useViewportSize } from "@mantine/hooks";
@@ -15,6 +16,7 @@ const useStyles = createStyles((t) => ({
     color: "white",
     width: "80%",
     margin: "auto",
+    zIndex: 1,
   },
   title: {
     width: "fit-content",
@@ -55,6 +57,11 @@ export default function Home() {
       sx={{ marginTop: vw < 786 ? "90px" : "130px" }}
       className={classes.container}
     >
+      <Overlay
+        gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, .25) 40%)"
+        opacity={1}
+        zIndex={-1}
+      />
       <Title ref={ref} className={classes.title}>
         Hi, I'm Anas Deyra
       </Title>

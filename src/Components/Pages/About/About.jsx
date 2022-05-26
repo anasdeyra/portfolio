@@ -53,17 +53,9 @@ export default function About() {
   return (
     <div ref={ref} className={classes.container}>
       <Overlay
-        sx={{
-          height: height,
-          width: "100vw",
-          top: "unset",
-          bottom: "unset",
-          left: "unset",
-          background: "rgba(77, 171, 247, 0.20);",
-          backdropFilter: "blur(20px)",
-        }}
+        gradient="linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .25) 40%)"
+        opacity={1}
         zIndex={-1}
-        color="cyan"
       />
       <Group className={classes.group1}>
         <Stack

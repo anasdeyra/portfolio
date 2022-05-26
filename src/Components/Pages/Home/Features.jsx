@@ -21,19 +21,6 @@ export default function Features() {
   const { classes } = useStyles();
   return (
     <div ref={ref}>
-      <Overlay
-        sx={{
-          height: height,
-          width: "100vw",
-          top: "unset",
-          bottom: "unset",
-          left: "unset",
-          background: "rgba(77, 171, 247, 0.20);",
-          backdropFilter: "blur(20px)",
-        }}
-        zIndex={-1}
-        color="cyan"
-      />
       <Container fluid className={classes.container} py={"xl"} px="0">
         <Title order={1}>Why choosing me?</Title>
         <SimpleGrid
@@ -51,7 +38,7 @@ export default function Features() {
             <Stack key={i} spacing={"xs"}>
               <Title
                 sx={(t) => ({ color: t.colors[color][saturation] })}
-                order={3}
+                order={2}
               >
                 {label}
               </Title>
@@ -73,11 +60,11 @@ const FEATURES = [
   {
     label: "Good looking design",
     text: "A well-designed website can help you form a good impression on your prospective customers, so I carefully pick a pleasing color scheme and minimalistic design with high quality photos, etc..",
-    color: ["red", 5],
+    color: ["indigo", 2],
   },
   {
     label: "Affordable price",
     text: "The websites that I make are pocket-friendly too.",
-    color: ["indigo", 5],
+    color: ["pink", 2],
   },
 ];

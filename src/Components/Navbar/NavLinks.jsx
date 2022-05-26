@@ -102,5 +102,5 @@ export function BurgerNavLinks() {
 const LINKS = [
   { label: "Home", link: "/" },
   { label: "Work", link: "/work" },
-  { label: "About", link: "/about" },
+  { label: "Resume", link: "/about" },
 ];

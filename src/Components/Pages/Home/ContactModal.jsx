@@ -1,4 +1,4 @@
-import { createStyles, Button, Modal, Stack } from "@mantine/core";
+import { createStyles, Button, Modal, Stack, Title, Text } from "@mantine/core";
 import { useState } from "react";
 import { useForm } from "@mantine/hooks";
 import { EmailInput, MessageInput, NameInput } from "./InputFields";
@@ -20,15 +20,21 @@ export default function ContactButton({ size }) {
     <>
       <Modal
         opened={opened}
-        styles={{ header: { fontWeight: "500" } }}
+        styles={{
+          modal: { borderRadius: "0" },
+        }}
         size="lg"
         onClose={() => toggle(false)}
-        title="Lets get in touch!"
+        title={
+          <Text weight={"500"} size="xl">
+            Lets get in touch
+          </Text>
+        }
       >
         <ContactModalContent />
       </Modal>
       <Button
-        radius={0}
+        radius={"0"}
         color="red"
         size={size}
         sx={{ fontWeight: "500" }}
@@ -96,6 +102,7 @@ function ContactModalContent() {
           className={classes.submitButton}
           color={"red"}
           type="submit"
+          radius={"0"}
         >
           {isLoading ? "Sending" : "Send"}
         </Button>
